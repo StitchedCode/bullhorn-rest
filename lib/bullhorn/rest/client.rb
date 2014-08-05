@@ -60,14 +60,31 @@ class Client
 
   end
 
+  #There is probably a case for puting all this in a helper method at some point
   def parse_to_candidate(resume_text)
       path = "resume/parseToCandidateViaJson?format=text"
       encodedResume = {"resume" => resume_text}.to_json   
       res = conn.post path, encodedResume
-
-     JSON.parse(res.body)
+      Hashie::Mash.new JSON.parse(res.body)
   end 
 
+  def get_candidate_files(candidate_id, attributes={})
+    path = "entityFiles/Candidate/#{candidate_id}"
+    res = conn.get path, attributes
+    Hashie::Mash.new JSON.parse(res.body)
+  end
+
+  def get_cv(candidate_id, file_id, attributes={})
+    path = "file/Candidate/#{candidate_id}/#{file_id}"
+    res = conn.get path, attributes
+    Hashie::Mash.new JSON.parse(res.body)
+  end 
+
+  def get_latest_cv(candidate_id, attributes={})
+    res = get_candidate_files(candidate_id)
+    cvs = res.EntityFiles.select { |file| file.type == 'CV' }
+    get_cv candidate_id, cvs.last.id    
+  end 
 
 end
 
