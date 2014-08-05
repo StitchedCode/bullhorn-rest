@@ -32,21 +32,21 @@ describe Bullhorn::Rest::Client, :vcr do
     it "should return the latest CV" do 
       latest_cv = client.get_latest_cv(11853)
 
-      decoded_data = Base64.decode64(latest_cv.File.fileContent)          
-      expect(latest_cv.File.name).to eq("Matt Wright.doc")
-      expect(latest_cv.File.contentType).to eq("application/msword")
+      decoded_data = Base64.decode64(latest_cv.fileContent)          
+      expect(latest_cv.name).to eq("Matt Wright.doc")
+      expect(latest_cv.contentType).to eq("application/msword")
             
     end
 
     it "should return a CV by ID file" do 
       res = client.get_cv(11853, 73782)
-      puts res.File.contentType
-      puts res.File.name
+      puts res.contentType
+      puts res.name
       puts "============================="
       #puts res.File.fileContent
 
-      decoded_data = Base64.decode64(res.File.fileContent)          
-      expect(res.File.name).to eq("Matt Wright.doc")
+      decoded_data = Base64.decode64(res.fileContent)          
+      expect(res.name).to eq("Matt Wright.doc")
     end
  
 

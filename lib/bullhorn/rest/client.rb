@@ -77,7 +77,8 @@ class Client
   def get_cv(candidate_id, file_id, attributes={})
     path = "file/Candidate/#{candidate_id}/#{file_id}"
     res = conn.get path, attributes
-    Hashie::Mash.new JSON.parse(res.body)
+    obj = Hashie::Mash.new JSON.parse(res.body)
+    obj.File
   end 
 
   def get_latest_cv(candidate_id, attributes={})
