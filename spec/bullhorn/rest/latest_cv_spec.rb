@@ -49,6 +49,11 @@ describe Bullhorn::Rest::Client, :vcr do
       expect(res.name).to eq("Matt Wright.doc")
     end
  
+    it "should return resumes" do
+      res = client.get_latest_cv(35598)
+      expect(res.name).to eq("Resume_Andy_Huang_201406.doc")
+
+    end 
 
   end
   
