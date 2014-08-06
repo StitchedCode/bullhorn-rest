@@ -55,7 +55,11 @@ describe Bullhorn::Rest::Client, :vcr do
 
     end 
 
+    it "should deal with no files elegantly" do
+      res = client.get_latest_cv(36026)
+      expect(res).to be_nil 
+    end 
+  
   end
   
-
 end

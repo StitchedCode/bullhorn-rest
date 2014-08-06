@@ -84,8 +84,8 @@ class Client
   def get_latest_cv(candidate_id, attributes={})
     res = get_candidate_files(candidate_id)
     accepted_cv_formats = ["CV", "Resume", "Formatted CV"]    
-    cvs = res.EntityFiles.select { |file| accepted_cv_formats.include?(file.type) }
-    get_cv candidate_id, cvs.last.id    
+    cvs = res.EntityFiles.select { |file| accepted_cv_formats.include?(file.type) }    
+    cvs.last.nil? ? nil : get_cv(candidate_id, cvs.last.id)     
   end 
 
 end
