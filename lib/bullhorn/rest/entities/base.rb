@@ -24,7 +24,7 @@ module Base
 
       obj = Hashie::Mash.new json
       obj.record_count = json["count"]
-      obj.has_next_page = obj.total? ? ((obj.start + obj.record_count) <= obj.total) : false       
+      obj.has_next_page = obj.total? ? ((obj.start + obj.record_count) < obj.total) : false       
 
       @current_record = @current_record + record_count    
       obj
@@ -41,7 +41,7 @@ module Base
       define_method("decorate_response") do |res|
         obj = Hashie::Mash.new res
         obj.record_count = res["count"]
-        obj.has_next_page = obj.total? ? ((obj.start + obj.record_count) <= obj.total) : false       
+        obj.has_next_page = obj.total? ? ((obj.start + obj.record_count) < obj.total) : false       
         obj  
       end      
 
@@ -109,9 +109,15 @@ module Base
 
     unless options[:immutable]
 
-      define_method("create_#{entity}") do |id, attributes={}|
-        path = "entity/#{name}/#{id}"
+      define_method("create_#{entity}") do |attributes={}|
+        path = "entity/#{name}"
         res = conn.put path, attributes
+        Hashie::Mash.new JSON.parse(res.body)
+      end
+      
+      define_method("associate_#{entity}") do |id, to_many_entity, ids|
+        path = "entity/#{name}/#{id}/#{to_many_entity}/#{ids.join(',')}"
+        res = conn.put path
         Hashie::Mash.new JSON.parse(res.body)
       end
 

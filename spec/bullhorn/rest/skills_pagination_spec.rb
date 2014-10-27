@@ -11,14 +11,18 @@ describe Bullhorn::Rest::Entities::Skill, :vcr do
 
 
     it "should return next page if there is one" do 
-      res = client.skills
+      res = client.job_orders
     
     	#For entities without 1->M relationships we can get it batchs of 500. In our test case we only have 200ish
+      # client.search_job_orders(query: "dateAdded:[20140701 TO 20140801]", sort: "-dateAdded")
+      #     vacancies =  client.search_job_orders(query: "dateAdded:[#{start_date} TO #{end_date}]", fields: "*,submissions(*)" , sort: "-dateAdded")
+
+      #binding.pry
       expect(res.has_next_page?).to be false
     end
 
     it "should return correct totals when initialized" do 
-      res = client.skills
+      res = client.candidates
 
       expect(res.start).to eq(0)
       expect(res.record_count).to eq(209)

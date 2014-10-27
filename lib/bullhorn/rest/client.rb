@@ -50,7 +50,7 @@ class Client
 
     @conn = Faraday.new do |f|
       f.use Middleware, self
-      #f.response :logger 
+      f.response :logger 
       f.adapter Faraday.default_adapter
     end
 
@@ -86,6 +86,13 @@ class Client
     accepted_cv_formats = ["CV", "Resume", "Formatted CV"]    
     cvs = res.EntityFiles.select { |file| accepted_cv_formats.include?(file.type) }    
     cvs.last.nil? ? nil : get_cv(candidate_id, cvs.last.id)     
+  end 
+
+  def upload_cv(candidate_id, attributes={})
+    puts attributes.to_json
+    path = "file/Candidate/#{candidate_id}"
+    res = conn.put path, attributes.to_json
+    Hashie::Mash.new JSON.parse(res.body)
   end 
 
 end

@@ -1,0 +1,27 @@
+{
+    "address" : {
+      "address1" : "49 Celandine Drive",
+      "address2" : "",
+      "city" : "London",
+      "state" : "Greater London",
+      "zip" : "E8 3XE"
+    },
+    "companyName" : "Stitched - TEST",
+    "email" : "matt@stitched.io",
+    "employmentPreference" : [ "Permanent" ],
+    "firstName" : "Matt",
+    "lastName" : "Wright",
+    "mobile" : "07595760341 (Don't C",
+    "name" : "Matthew Wright",
+    "namePrefix" : [ "Mr" ],
+    "occupation" : "Cto",
+    "owner" : {
+      "id" : 5,
+      "firstName" : "Adam", 
+      "lastName" : "Vipond"
+    },
+    "personSubtype" : "Candidate",
+    "phone" : "44 075-95760341",
+    "preferredContact" : "Phone",
+    "source" : [ "Stitched" ]
+}
