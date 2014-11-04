@@ -17,7 +17,8 @@ describe Bullhorn::Rest::Entities::Skill, :vcr do
       # client.search_job_orders(query: "dateAdded:[20140701 TO 20140801]", sort: "-dateAdded")
       #     vacancies =  client.search_job_orders(query: "dateAdded:[#{start_date} TO #{end_date}]", fields: "*,submissions(*)" , sort: "-dateAdded")
 
-      #binding.pry
+      person = client.client_contact(37318)
+      binding.pry
       expect(res.has_next_page?).to be false
     end
 
