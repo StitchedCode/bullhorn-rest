@@ -95,7 +95,24 @@ class Client
     Hashie::Mash.new JSON.parse(res.body)
   end 
 
-end
+  def create_event(subscription_id, entity)
+     path = "event/subscription/#{subscription_id}?type=entity&names=#{entity}&eventTypes=INSERTED,UPDATED,DELETED"  
+     res = conn.put path
+     Hashie::Mash.new JSON.parse(res.body)
+  end 
 
+  def get_subscription(subscription_id)
+     path = "event/subscription/#{subscription_id}"  
+     res = conn.get path
+     Hashie::Mash.new JSON.parse(res.body)
+  end 
+
+  def get_subscription_last_request(subscription_id, request_id)
+     path = "event/subscription/#{subscription_id}?requestId=#{request_id}"  
+     res = conn.get path
+     Hashie::Mash.new JSON.parse(res.body)
+  end 
+
+end
 end
 end

@@ -64,17 +64,17 @@ end
 
 
 def test_bh_username
-  ENV.fetch 'BH_TEST_USERNAME', 'caspianBankingAPIuser'
+  ENV.fetch 'BH_TEST_USERNAME', 'USERNAME'
 end
 
 def test_bh_password
-  ENV.fetch 'BH_TEST_PASSWORD', 'caspianone2014'
+  ENV.fetch 'BH_TEST_PASSWORD', 'PASS'
 end
 
 def test_bh_client_id
-  ENV.fetch 'BH_TEST_CLIENT_ID', '4f09212f-98c9-42cc-9ecc-03da7f851dd6'
+  ENV.fetch 'BH_TEST_CLIENT_ID', 'BH_CLIENT'
 end
 
 def test_bh_client_secret
-  ENV.fetch 'BH_TEST_CLIENT_SECRET', 'ob1OR0yL9bpG5jBMhaR+7b9KlN3gESPa'
+  ENV.fetch 'BH_TEST_CLIENT_SECRET', 'BH_SECRET'
 end
