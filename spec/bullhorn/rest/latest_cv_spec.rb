@@ -25,7 +25,7 @@ describe Bullhorn::Rest::Client, :vcr do
       #puts lastFile       
 
      # puts res.EntityFiles
-      expect(lastFile.name).to eq("Matt Wright.doc")
+      expect(lastFile.name).to eq("Matt Wright.pdf")
 
     end
 
@@ -33,8 +33,8 @@ describe Bullhorn::Rest::Client, :vcr do
       latest_cv = client.get_latest_cv(11853)
 
       decoded_data = Base64.decode64(latest_cv.fileContent)          
-      expect(latest_cv.name).to eq("Matt Wright.doc")
-      expect(latest_cv.contentType).to eq("application/msword")
+      expect(latest_cv.name).to eq("Matt Wright.pdf")
+      expect(latest_cv.contentType).to eq("application/pdf")
             
     end
 

@@ -101,16 +101,22 @@ class Client
      Hashie::Mash.new JSON.parse(res.body)
   end 
 
-  def get_subscription(subscription_id)
+  def delete_event(subscription_id)
      path = "event/subscription/#{subscription_id}"  
-     res = conn.get path
+     res = conn.delete path
      Hashie::Mash.new JSON.parse(res.body)
+  end   
+
+  def get_events(subscription_id)
+     path = "event/subscription/#{subscription_id}?maxEvents=500"  
+     res = conn.get path
+     res.body.blank? ? "" : Hashie::Mash.new(JSON.parse(res.body))
   end 
 
-  def get_subscription_last_request(subscription_id, request_id)
+  def get_events_by_requestId(subscription_id, request_id)
      path = "event/subscription/#{subscription_id}?requestId=#{request_id}"  
      res = conn.get path
-     Hashie::Mash.new JSON.parse(res.body)
+     res.body.blank? ? "No Results for subscription:#{subscription_id}, request:#{request_id}" : Hashie::Mash.new(JSON.parse(res.body))
   end 
 
 end

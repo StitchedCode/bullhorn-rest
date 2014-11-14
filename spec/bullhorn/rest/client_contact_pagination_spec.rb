@@ -22,8 +22,7 @@ describe Bullhorn::Rest::Entities::ClientContact, :vcr do
 
     it "should through all pages using next_page" do 
       entity = client.client_contacts 
-      results = []
-      binding.pry            
+      results = []           
 
       #If there is no next page to go to just append results
       results.concat(entity.data) 
@@ -36,12 +35,10 @@ describe Bullhorn::Rest::Entities::ClientContact, :vcr do
         
         unless entity.has_next_page?
           puts next_page.start
-          binding.pry
         end 
 
         puts "Fetched #{next_page.start} to #{next_page.start + next_page.record_count} of #Contacts"  
       end 
-      binding.pry
       results    
     end
 

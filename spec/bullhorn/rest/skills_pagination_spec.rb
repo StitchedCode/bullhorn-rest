@@ -18,7 +18,6 @@ describe Bullhorn::Rest::Entities::Skill, :vcr do
       #     vacancies =  client.search_job_orders(query: "dateAdded:[#{start_date} TO #{end_date}]", fields: "*,submissions(*)" , sort: "-dateAdded")
 
       person = client.client_contact(37318)
-      binding.pry
       expect(res.has_next_page?).to be false
     end
 
@@ -26,7 +25,7 @@ describe Bullhorn::Rest::Entities::Skill, :vcr do
       res = client.candidates
 
       expect(res.start).to eq(0)
-      expect(res.record_count).to eq(209)
+      expect(res.record_count).to eq(500)
     end
   
 
