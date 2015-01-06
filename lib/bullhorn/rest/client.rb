@@ -119,6 +119,12 @@ class Client
      res.body.blank? ? "No Results for subscription:#{subscription_id}, request:#{request_id}" : Hashie::Mash.new(JSON.parse(res.body))
   end 
 
+  def get_meta_data(entity, attributes)
+     path = "meta/#{entity}"  
+     res = conn.get path, attributes
+     res.body.blank? ? "" : Hashie::Mash.new(JSON.parse(res.body))
+  end 
+
 end
 end
 end
