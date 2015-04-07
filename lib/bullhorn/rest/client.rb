@@ -27,6 +27,7 @@ class Client
   include Bullhorn::Rest::Entities::CustomAction
   include Bullhorn::Rest::Entities::JobOrder
   include Bullhorn::Rest::Entities::JobSubmission
+  include Bullhorn::Rest::Entities::JobSubmissionHistory
   include Bullhorn::Rest::Entities::Note
   include Bullhorn::Rest::Entities::NoteEntity
   include Bullhorn::Rest::Entities::Placement
