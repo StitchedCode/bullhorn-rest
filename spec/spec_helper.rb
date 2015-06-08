@@ -59,22 +59,22 @@ VCR.configure do |c|
 
   
   c.allow_http_connections_when_no_cassette = true
-  c.ignore_hosts 'auth.bullhornstaffing.com', 'rest22.bullhornstaffing.com', 'rest.bullhornstaffing.com'
+  #c.ignore_hosts 'auth.bullhornstaffing.com', 'rest22.bullhornstaffing.com', 'rest.bullhornstaffing.com'
 end
 
 
 def test_bh_username
-  ENV.fetch 'BH_TEST_USERNAME', 'caspianBankingAPIuser'
+  ENV.fetch 'BH_TEST_USERNAME', 'BH_TEST_USERNAME'
 end
 
 def test_bh_password
-  ENV.fetch 'BH_TEST_PASSWORD', 'caspianone2014'
+  ENV.fetch 'BH_TEST_PASSWORD', 'BH_TEST_PASSWORD'
 end
 
 def test_bh_client_id
-  ENV.fetch 'BH_TEST_CLIENT_ID', '4f09212f-98c9-42cc-9ecc-03da7f851dd6'
+  ENV.fetch 'BH_TEST_CLIENT_ID', 'BH_TEST_CLIENT_ID'
 end
 
 def test_bh_client_secret
-  ENV.fetch 'BH_TEST_CLIENT_SECRET', 'ob1OR0yL9bpG5jBMhaR+7b9KlN3gESPa'
+  ENV.fetch 'BH_TEST_CLIENT_SECRET', 'BH_TEST_CLIENT_SECRET'
 end

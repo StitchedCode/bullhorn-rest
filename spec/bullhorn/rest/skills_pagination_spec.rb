@@ -25,14 +25,14 @@ describe Bullhorn::Rest::Entities::Skill, :vcr do
       res = client.candidates
 
       expect(res.start).to eq(0)
-      expect(res.record_count).to eq(209)
+      expect(res.record_count).to eq(100)
     end
   
 
     it "should return ordered list by default" do 
       res = client.skills
       skill = client.skills.data.first
-      expect(skill.name).to eq(".NET")
+      expect(skill.name).to eq("29West/Informatica Ultra Messaging")
     end
   
 

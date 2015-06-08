@@ -15,6 +15,7 @@ describe Bullhorn::Rest::Client, :vcr do
 
       cvs = res.EntityFiles.select { |file| file.type == 'CV' }
 
+
       lastFile =  cvs.last      
       puts lastFile.fileUrl
       puts lastFile.id
@@ -25,16 +26,16 @@ describe Bullhorn::Rest::Client, :vcr do
       #puts lastFile       
 
      # puts res.EntityFiles
-      expect(lastFile.name).to eq("Matt Wright.doc")
+      expect(lastFile.name).to eq("MattWright.pdf")
 
     end
 
     it "should return the latest CV" do 
-      latest_cv = client.get_latest_cv(11853)
+      latest_cv = client.get_latest_cv(11853, {accepted_cv_formats:  ["CV", "Resume", "Formatted CV"]}) 
+      decoded_data = Base64.decode64(latest_cv.cv_file.fileContent) 
 
-      decoded_data = Base64.decode64(latest_cv.fileContent)          
-      expect(latest_cv.name).to eq("Matt Wright.doc")
-      expect(latest_cv.contentType).to eq("application/msword")
+      expect(latest_cv.name).to eq("MattWright.pdf")
+      expect(latest_cv.contentType).to eq("application")
             
     end
 
