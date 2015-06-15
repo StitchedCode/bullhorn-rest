@@ -52,12 +52,12 @@ VCR.configure do |c|
       # TODO: Track down UTF-8 issue and remove
       :preserve_exact_body_bytes  => true,
       :decode_compressed_response => true,
-      :match_requests_on => [:method, :host, :path],  
+      :match_requests_on => [:method, :host, :path],
     }
     c.cassette_library_dir = 'spec/cassettes'
     c.hook_into :webmock
 
-  
+
   c.allow_http_connections_when_no_cassette = true
   #c.ignore_hosts 'auth.bullhornstaffing.com', 'rest22.bullhornstaffing.com', 'rest.bullhornstaffing.com'
 end
