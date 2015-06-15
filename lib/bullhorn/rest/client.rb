@@ -27,6 +27,7 @@ class Client
   include Bullhorn::Rest::Entities::CustomAction
   include Bullhorn::Rest::Entities::JobOrder
   include Bullhorn::Rest::Entities::JobSubmission
+  include Bullhorn::Rest::Entities::JobSubmissionHistory
   include Bullhorn::Rest::Entities::Note
   include Bullhorn::Rest::Entities::NoteEntity
   include Bullhorn::Rest::Entities::Placement
@@ -99,7 +100,36 @@ class Client
     Hashie::Mash.new JSON.parse(res.body)
   end 
 
-end
+  def create_event(subscription_id, entity)
+     path = "event/subscription/#{subscription_id}?type=entity&names=#{entity}&eventTypes=INSERTED,UPDATED,DELETED"  
+     res = conn.put path
+     Hashie::Mash.new JSON.parse(res.body)
+  end 
 
+  def delete_event(subscription_id)
+     path = "event/subscription/#{subscription_id}"  
+     res = conn.delete path
+     Hashie::Mash.new JSON.parse(res.body)
+  end   
+
+  def get_events(subscription_id)
+     path = "event/subscription/#{subscription_id}?maxEvents=500"  
+     res = conn.get path
+     res.body.blank? ? "" : Hashie::Mash.new(JSON.parse(res.body))
+  end 
+
+  def get_events_by_requestId(subscription_id, request_id)
+     path = "event/subscription/#{subscription_id}?requestId=#{request_id}"  
+     res = conn.get path
+     res.body.blank? ? "No Results for subscription:#{subscription_id}, request:#{request_id}" : Hashie::Mash.new(JSON.parse(res.body))
+  end 
+
+  def get_meta_data(entity, attributes)
+     path = "meta/#{entity}"  
+     res = conn.get path, attributes
+     res.body.blank? ? "" : Hashie::Mash.new(JSON.parse(res.body))
+  end 
+
+end
 end
 end
