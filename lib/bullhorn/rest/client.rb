@@ -83,10 +83,14 @@ class Client
   end 
 
   def get_latest_cv(candidate_id, attributes={})
-    res = get_candidate_files(candidate_id)
-    accepted_cv_formats = ["CV", "Resume", "Formatted CV"]    
-    cvs = res.EntityFiles.select { |file| accepted_cv_formats.include?(file.type) }    
-    cvs.last.nil? ? nil : get_cv(candidate_id, cvs.last.id)     
+    filter_cvs = attributes.delete(:accepted_cv_formats) { false }
+    res = get_candidate_files(candidate_id, attributes)
+    if filter_cvs    
+      cvs = res.EntityFiles.select { |file| filter_cvs.include?(file.type) }    
+    else
+      cvs = res.EntityFiles
+    end     
+    cvs.last.nil? ? nil : cvs.last.merge({cv_file: get_cv(candidate_id, cvs.last.id)})     
   end 
 
   def upload_cv(candidate_id, attributes={})
