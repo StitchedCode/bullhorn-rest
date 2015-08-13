@@ -1,6 +1,7 @@
 # Bullhorn::Rest
 
 [![Code Climate](https://codeclimate.com/github/MrMattWright/bullhorn-rest.png)](https://codeclimate.com/github/MrMattWright/bullhorn-rest)
+[![Code Climate](https://codeclimate.com/github/MrMattWright/bullhorn-rest/coverage.png)](https://codeclimate.com/github/MrMattWright/bullhorn-rest)
 
 
 Ruby wrapper for the [Bullhorn REST API](http://developer.bullhorn.com/articles/getting_started). For additional information on the API itself, see the official [Bullhorn documentation](http://developer.bullhorn.com/documentation).
@@ -18,6 +19,12 @@ And then execute:
 Or install it yourself as:
 
     $ gem install bullhorn-rest
+
+If you haven't accessed the bullhorn API before, it may be nececarry to follow these additional steps:
+
+1. Visit `https://auth.bullhornstaffing.com/oauth/authorize?action=Login&client_id=XXX&response_type=code&username=XXX` in a browser, replacing the client_id and username with your credentials.
+2. Type the password into the login form.
+3. Check that you are redirected to the redirect URL and that a `code` parameter has been appended to the URL.
 
 ## Usage
 
