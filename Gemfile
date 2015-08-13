@@ -11,6 +11,7 @@ group :test, :development do
   gem 'multi_json'
   gem 'awesome_print', :require => 'ap'
   gem 'pry'
+  gem 'byebug'
   gem 'maybe'
   gem 'guard-rspec'
   gem 'guard-spin'
