@@ -1,0 +1,239 @@
+{
+  "data" : {
+    "id" : 11853,
+    "address" : {
+      "address1" : "49 Celandine Drive",
+      "address2" : "",
+      "city" : "London",
+      "state" : "Greater London",
+      "zip" : "E8 3XE",
+      "countryID" : 2359
+    },
+    "businessSectors" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "candidateID" : 4248,
+    "categories" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "category" : {
+      "id" : 940659
+    },
+    "certificationList" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "certifications" : null,
+    "clientCorporationBlackList" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "clientCorporationWhiteList" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "comments" : "",
+    "companyName" : "Stitched",
+    "companyURL" : "",
+    "customDate1" : null,
+    "customDate2" : null,
+    "customDate3" : null,
+    "customFloat1" : 0.0,
+    "customFloat2" : 0.0,
+    "customFloat3" : 0.0,
+    "customInt1" : 0,
+    "customInt2" : 0,
+    "customInt3" : 0,
+    "customText1" : "",
+    "customText10" : "",
+    "customText11" : "",
+    "customText12" : "",
+    "customText13" : "",
+    "customText14" : "",
+    "customText15" : "",
+    "customText16" : "",
+    "customText17" : "",
+    "customText18" : "",
+    "customText19" : "",
+    "customText2" : "",
+    "customText20" : "",
+    "customText3" : "",
+    "customText4" : "6 Weeks",
+    "customText5" : "12852",
+    "customText6" : "",
+    "customText7" : "GBP",
+    "customText8" : "[Select]",
+    "customText9" : "[Select]",
+    "customTextBlock1" : null,
+    "customTextBlock2" : "",
+    "customTextBlock3" : "",
+    "customTextBlock4" : "",
+    "customTextBlock5" : "",
+    "dateAdded" : 1232323200000,
+    "dateAvailable" : null,
+    "dateAvailableEnd" : null,
+    "dateI9Expiration" : null,
+    "dateLastComment" : 1409575821713,
+    "dateNextCall" : null,
+    "dateOfBirth" : null,
+    "dayRate" : 0.0000,
+    "dayRateLow" : 0.0000,
+    "degreeList" : null,
+    "description" : "<div>\r\n<div><i>Matt Wright</i></div>\r\n\r\n<div>49 Celandine Drive</div>\r\n\r\n<div>Dalston</div>\r\n\r\n<div>London, UK E8 3XE</div>\r\n\r\n<div>T: 07595760341</div>\r\n\r\n<div>B: 02 April 1976</div>\r\n\r\n<div>matt@sudden.co.nz</div>\r\n\r\n<div><i>Summary</i></div>\r\n\r\n<div>?</div>\r\n\r\n<div>Graduated from University of Auckland with a degree in Information Technology and Statistics in 1997 and</div>\r\n\r\n<div>have been involved in designing, developing and deploying computer technology and software for 15</div>\r\n\r\n<div>years.</div>\r\n\r\n<div>Graduated from University of Auckland with a degree in Information Technology and Statistics in 1997 and</div>\r\n\r\n<div>have been involved in designing, developing and deploying computer technology and software for 16</div>\r\n\r\n<div>years.</div>\r\n\r\n<div>Over the last 8 years this has meant leading and managing teams running various Front Office projects in</div>\r\n\r\n<div>Fixed Income, Equity and Credit, more recently focussed on Equity Derivatives. All projects have involved</div>\r\n\r\n<div>considerable contact with Front Office traders, Quants and Middle Office, involvement in planning,</div>\r\n\r\n<div>governance and ultimately execution of various programs of work.</div>\r\n\r\n<div>Most recently involved in setting up a 3 year change program at Deutsche Bank to drastically reduce the</div>\r\n\r\n<div>cost per trade and overall year on year costs of running the global Equity Derivatives business. This has</div>\r\n\r\n<div>involved overseeing technology strategy, analysis streams, budgeting and estimation, development</div>\r\n\r\n<div>governance, vendor outsourcing engagement and setting up the appropriate project governance to</div>\r\n\r\n<div>oversee the overall program.</div>\r\n\r\n<div><i>Experience</i></div>\r\n\r\n<div>CTO, S</div>\r\n\r\n<div>TITCHED</div>\r\n\r\n<div>.</div>\r\n\r\n<div>J</div>\r\n\r\n<div>AN</div>\r\n\r\n<div>2014 - P</div>\r\n\r\n<div>RESENT</div>\r\n\r\n<div>.</div>\r\n\r\n<div>Stitched.io is the combination of a Social network and a CRM system for the recruitment market. It con-</div>\r\n\r\n<div>nects together an existing candidate base, groups people into market niches and allows a recruitment</div>\r\n\r\n<div>company to leverage their private network to discover opportunity and better place candidates. It is build</div>\r\n\r\n<div>on the concept that connecting together your companies private contacts (outside of FB/Linked In etc)</div>\r\n\r\n<div>provides you insight and advantage that other CRM systems do not.</div>\r\n\r\n<div>We are in private beta with a small number of companies over the 2014 summer before wider launch. If</div>\r\n\r\n<div>you are a recruitment company and interested in a demo, please contact me directly.</div>\r\n\r\n<div>Technology wise Stitched is built very heavily on Neo4J and Ruby on Rails. Neo4j enables us to build our</div>\r\n\r\n<div>own private social network for each recruitment company. If you want to understand this a bit more have a</div>\r\n\r\n<div>look at my recent presentation at the Neo4j meetup. On Private Social Networks: https://skillsmatter.com/</div>\r\n\r\n<div>skillscasts/5179-private-social-networks</div>\r\n\r\n<div>P</div>\r\n\r\n<div>ROGRAMME</div>\r\n\r\n<div>M</div>\r\n\r\n<div>ANAGER</div>\r\n\r\n<div>, D</div>\r\n\r\n<div>EUTSCHE</div>\r\n\r\n<div>B</div>\r\n\r\n<div>ANK</div>\r\n\r\n<div>.</div>\r\n\r\n<div>J</div>\r\n\r\n<div>ULY</div>\r\n\r\n<div>2012 - D</div>\r\n\r\n<div>EC</div>\r\n\r\n<div>2013.</div>\r\n\r\n<div>Global IT Management - Responsible for IT delivery teams in Hong Kong, Singapore, London and New</div>\r\n\r\n<div>York. Responsible for multiple technology engagements involving outsourcing vendors in India, Spain and</div>\r\n\r\n<div>Russia. IT delivery to global front office trading desks, stakeholder management with representatives of</div>\r\n\r\n<div>global operations teams and collaboration with internal teams in pricing and risk functions in IT as well as</div>\r\n\r\n<div>delivery of major regulatory requirements.</div>\r\n\r\n<div>Technology Leadership - Early adopter and sponsor of various technology initiatives including Hadoop via</div>\r\n\r\n<div>Cloudera, messaging solutions using Storm and Trident, and virtualised testing using Vagrant, Chef and</div>\r\n\r\n<div>BDD.</div>\r\n\r\n<div>\r\n<hr /></div>\r\n\r\n<div>Programme Management - Responsible for a core 3 year technology program in Equity Derivatives deliv-</div>\r\n\r\n<div>ering into Deutsche Banks strategic &quot;Operational Excellence&quot; program. This involves forming and present-</div>\r\n\r\n<div>ing the business case, multi year budgeting, technology roadmaps, programme planning, vendor mobili-</div>\r\n\r\n<div>sation and forming new teams around governance and reporting.</div>\r\n\r\n<div>D</div>\r\n\r\n<div>IRECTOR</div>\r\n\r\n<div>, RBC C</div>\r\n\r\n<div>APITAL</div>\r\n\r\n<div>M</div>\r\n\r\n<div>ARKETS</div>\r\n\r\n<div>.</div>\r\n\r\n<div>A</div>\r\n\r\n<div>PRIL</div>\r\n\r\n<div>2009 - J</div>\r\n\r\n<div>UNE</div>\r\n\r\n<div>2012.</div>\r\n\r\n<div><i>FIC Derivatives Program - (Dec 2010 - Current)</i></div>\r\n\r\n<div>This global program seeks to upgrade RBC&#39;s Interest Rate Derivatives global capability across the board</div>\r\n\r\n<div>from pricing, risk management to trade workflow. This involves introduction of new internal</div>\r\n\r\n<div>RBC</div>\r\n\r\n<div>analytics,</div>\r\n\r\n<div>and scaling up trading volumes as well as meeting regulatory requirements and also retiring legacy trade</div>\r\n\r\n<div>management systems. My involvement has included:</div>\r\n\r\n<div>&bull;</div>\r\n\r\n<div>Initial involvement in putting overall request to fund program, outlining business benefits, project</div>\r\n\r\n<div>goals, deliverables and timelines.</div>\r\n\r\n<div>&bull;</div>\r\n\r\n<div>Representing Europe and APAC business deliverables to the business, involving front office in regu-</div>\r\n\r\n<div>lar workshops, working groups and requirements analysis.</div>\r\n\r\n<div>&bull;</div>\r\n\r\n<div>Setting up governance, project management goals and engaging CTB teams as well as down-</div>\r\n\r\n<div>stream functions (middle and back office)</div>\r\n\r\n<div>&bull;</div>\r\n\r\n<div>Direct planning and execution over pricing deliverables including introducing new analytics, en-</div>\r\n\r\n<div>gagement with quants, quoting to external markets via Tradeweb and Bloomberg. Introduction of</div>\r\n\r\n<div>systems including multiple technologies (C++/Java/.NET). Rollout of client and server technologies</div>\r\n\r\n<div>over multiple geographic locations.</div>\r\n\r\n<div>&bull;</div>\r\n\r\n<div>Global management of pricing teams (London/New York) and European management of tactical on</div>\r\n\r\n<div>desk spreadsheet based development.</div>\r\n\r\n<div><i>European Government Bonds Program - Rates Derivatives (Nov 2009 - Dec 2010)</i></div>\r\n\r\n<div>This program involved building out a greenfield cash trading platform based on ION infrastructure to Eu-</div>\r\n\r\n<div>rope, with derivatives primarily for hedging. The project was completed on time, on budget and was</div>\r\n\r\n<div>widely recognized as one of the most successful IT project in recent years at RBC at a board level. I</div>\r\n\r\n<div>was</div>\r\n\r\n<div>involved in:</div>\r\n\r\n<div>&bull;</div>\r\n\r\n<div>Laying out governance and project management structures.</div>\r\n\r\n<div>&bull;</div>\r\n\r\n<div>Creating, and building a new derivatives pricing team.</div>\r\n\r\n<div>&bull;</div>\r\n\r\n<div>Designing, architecting and introducing a new risk platform.</div>\r\n\r\n<div>&bull;</div>\r\n\r\n<div>Externalizing legacy analytics and deploying to a new server based infrastructure including stream-</div>\r\n\r\n<div>ing prices and datasynapse grid based deployable libraries.</div>\r\n\r\n<div>&bull;</div>\r\n\r\n<div>Representing the derivatives deliverables to the European swaps desk.</div>\r\n\r\n<div><i>RBC Graduate Program (Member of the current steering committee)</i></div>\r\n\r\n<div>While at RBC I have also participated actively in the graduate program with HR, reshaping and expanding</div>\r\n\r\n<div>the former graduate program, extending it, speaking at university fairs, interviewing graduates and</div>\r\n\r\n<div>mentoring current members of the program.</div>\r\n\r\n<div>V</div>\r\n\r\n<div>ICE</div>\r\n\r\n<div>P</div>\r\n\r\n<div>RESIDENT</div>\r\n\r\n<div>, D</div>\r\n\r\n<div>RESDNER</div>\r\n\r\n<div>K</div>\r\n\r\n<div>LIENWORT</div>\r\n\r\n<div>.</div>\r\n\r\n<div>J</div>\r\n\r\n<div>UN</div>\r\n\r\n<div>2006 - A</div>\r\n\r\n<div>PR</div>\r\n\r\n<div>2009.</div>\r\n\r\n<div><i>Team Lead - Exotic Equity Derivatives (Jan 2008 - May 2009)</i></div>\r\n\r\n<div>Imagine Externalization (C#/Excel/Java) - I ran a team of 5 developers and designed the C# based solu-</div>\r\n\r\n<div>tion on a complex, high profile project in the exotic equity derivatives space which decommissioned a</div>\r\n\r\n<div>legacy risk platform responsible for providing risk metrics on exotic derivatives into the existing Imagine</div>\r\n\r\n<div>systems. During this project I:</div>\r\n\r\n<div>&bull;</div>\r\n\r\n<div>Replaced existing risk system which produced greek risk measures into a global Imagine instance</div>\r\n\r\n<div>&bull;</div>\r\n\r\n<div>Introduced structure, governance and modern software practices including Subversion, Continu-</div>\r\n\r\n<div>ous Integration (via Team City), unit testing and deployable setup artifacts.</div>\r\n\r\n<div>&bull;</div>\r\n\r\n<div>Replaced a Java EJB server farm with a C# Client and Java/Coherence back end.</div>\r\n\r\n<div>&bull;</div>\r\n\r\n<div>Built a new excel based server pricing farm using Microsoft Virtual Server and Datasynapse. There</div>\r\n\r\n<div>are now 500 identical virtual servers running intraday, end of day P&amp;L and risk metrics.</div>\r\n\r\n<div><i>Team Lead - Credit Derivatives (Jul 2006 - Jan 2008)</i></div>\r\n\r\n<div>I ran a team of 5 developers and worked on and built a variety of .NET technical products for the DKIB</div>\r\n\r\n<div>flow and exotic credit derivatives desks. Particular highlights during this time include:</div>\r\n\r\n<div>\r\n<hr /></div>\r\n\r\n<div>&bull;</div>\r\n\r\n<div>Team Leading - I was recognized for excellent organization and understanding of agile practices</div>\r\n\r\n<div>and mentored various other team leaders.</div>\r\n\r\n<div>&bull;</div>\r\n\r\n<div>Curve Analyzer - I designed and built a C# Winforms GUI that integrated with Managed C++ Li-</div>\r\n\r\n<div>braries provided by quants which enabled the exotic and flow desks to reconcile, analyze and mark</div>\r\n\r\n<div>to market CDS curve spreads.</div>\r\n\r\n<div>&bull;</div>\r\n\r\n<div>Curve Service - We built both a C# WebService and C# REST Service to expose CDS B/O</div>\r\n\r\n<div>Spreads, CDS Index data, index tranche composition and CDO constituents. These services were</div>\r\n\r\n<div>multithreaded</div>\r\n\r\n<div>and</div>\r\n\r\n<div>highly used by a large Datasynapse based pricing farm.</div>\r\n\r\n<div>&bull;</div>\r\n\r\n<div>Managed CDO Website - Built a client facing ASP.NET website allowing real time analysis and</div>\r\n\r\n<div>repricing of CDOs. Used C#, ASP.NET, AJAX, IIS and DataSynapse for pricing.</div>\r\n\r\n<div>&bull;</div>\r\n\r\n<div>CPT (Credit Portfolio Toolkit) - Maintained and enhanced a C# 2.0 GUI that used genetic algorithms</div>\r\n\r\n<div>and monte carlo simulation to structure and analyze CDO Deals.?</div>\r\n\r\n<div>C</div>\r\n\r\n<div>ONTRACT</div>\r\n\r\n<div>D</div>\r\n\r\n<div>EVELOPER</div>\r\n\r\n<div>, D</div>\r\n\r\n<div>RESDNER</div>\r\n\r\n<div>K</div>\r\n\r\n<div>LIENWORT</div>\r\n\r\n<div>.</div>\r\n\r\n<div>J</div>\r\n\r\n<div>UL</div>\r\n\r\n<div>2002 - S</div>\r\n\r\n<div>EP</div>\r\n\r\n<div>2005.</div>\r\n\r\n<div><i>. </i></div>\r\n\r\n<div><i>NET Specialist - DAM Team. (May 2004 - Sept 2005)</i></div>\r\n\r\n<div>DrKW.Directory .NET Components - This .NET Assembly based API is used by all windows forms</div>\r\n\r\n<div>and .NET websites within DrKW to securely access a certificate based LDAP Directory. The API involved</div>\r\n\r\n<div>Core C# Libraries, Web Services, documentation, code samples and support.</div>\r\n\r\n<div>Grid Computing - Using the DataSynapse grid computing software, our team hosted, ran and configured</div>\r\n\r\n<div>a 600 node server farm for the calculation of intra day trading pricing. This involved learning and using</div>\r\n\r\n<div>Linux, java and the DataSyapse Java/.NET programming bridge.</div>\r\n\r\n<div><i>Senior .NET Developer - Enterprise Server Team. (July 2002 - May 2004)</i></div>\r\n\r\n<div>DrKW has a very large deployment of windows servers, covering all parts of the globe. It was my</div>\r\n\r\n<div>responsibility to write software</div>\r\n\r\n<div>to</div>\r\n\r\n<div>manage and monitor these servers. ASP.NET and various C#</div>\r\n\r\n<div>development.</div>\r\n\r\n<div>C</div>\r\n\r\n<div>ONTRACT</div>\r\n\r\n<div>D</div>\r\n\r\n<div>EVELOPER</div>\r\n\r\n<div>, M</div>\r\n\r\n<div>ARINER</div>\r\n\r\n<div>7 L</div>\r\n\r\n<div>IMITED</div>\r\n\r\n<div>.</div>\r\n\r\n<div>J</div>\r\n\r\n<div>AN</div>\r\n\r\n<div>2002 - J</div>\r\n\r\n<div>UNE</div>\r\n\r\n<div>2002.</div>\r\n\r\n<div>Strategic HR solutions for recruitment, succession planning, 360 assessment and performance</div>\r\n\r\n<div>management. Further development work in ASP, COM+, SQL 2000. Evaluation of ASP.NET</div>\r\n\r\n<div>S</div>\r\n\r\n<div>ENIOR</div>\r\n\r\n<div>D</div>\r\n\r\n<div>EVELOPER</div>\r\n\r\n<div>, U</div>\r\n\r\n<div>TILYX</div>\r\n\r\n<div>L</div>\r\n\r\n<div>IMITED</div>\r\n\r\n<div>.</div>\r\n\r\n<div>J</div>\r\n\r\n<div>UN</div>\r\n\r\n<div>2000 - A</div>\r\n\r\n<div>UG</div>\r\n\r\n<div>2001.</div>\r\n\r\n<div>Utilyx is an online energy management solution allowing buyers and suppliers of electricity to come</div>\r\n\r\n<div>together in a mutually beneficial market place for online procurement and energy management. Further</div>\r\n\r\n<div>work in ASP, COM+, SQL 2000, VB, XML, XSL and Active Directory integration. Subject of Microsoft</div>\r\n\r\n<div>technology case study.</div>\r\n\r\n<div>D</div>\r\n\r\n<div>EVELOPER</div>\r\n\r\n<div>, G</div>\r\n\r\n<div>LAZIER</div>\r\n\r\n<div>S</div>\r\n\r\n<div>YSTEMS</div>\r\n\r\n<div>(NZ).</div>\r\n\r\n<div>J</div>\r\n\r\n<div>UL</div>\r\n\r\n<div>1998 - M</div>\r\n\r\n<div>AY</div>\r\n\r\n<div>2000.</div>\r\n\r\n<div>Independent software house specializing in internet applications. Work on Microsoft IIS, Asp, COM, MTS,</div>\r\n\r\n<div>DHTML, Sql Server, Javascript. Commerce Server,</div>\r\n\r\n<div>Photoshop.</div>\r\n\r\n<div>Highlights include:</div>\r\n\r\n<div>&bull;</div>\r\n\r\n<div>Winner of the 1999 NZ TUANZ Online media award in the Information/Reference category for work with</div>\r\n\r\n<div>AC Nielsen.</div>\r\n\r\n<div>&bull;</div>\r\n\r\n<div>Complete Analysis, Design and Development of</div>\r\n\r\n<div>http://www.lk.co.nz/</div>\r\n\r\n<div>. First online Liquor store in NZ,</div>\r\n\r\n<div>integrated with delivery and distribution systems for Lion Nathan.</div>\r\n\r\n<div>D</div>\r\n\r\n<div>EVELOPER</div>\r\n\r\n<div>, M</div>\r\n\r\n<div>INISTRY OF</div>\r\n\r\n<div>S</div>\r\n\r\n<div>OFTWARE</div>\r\n\r\n<div>(NZ).</div>\r\n\r\n<div>N</div>\r\n\r\n<div>OV</div>\r\n\r\n<div>1997 - J</div>\r\n\r\n<div>UN</div>\r\n\r\n<div>1998.</div>\r\n\r\n<div>Ministry of Software (now a department of Simpl) was a software development house specializing in</div>\r\n\r\n<div>Client-Server Application Development in Microsoft Technologies. ?</div>\r\n\r\n<div><i>Education </i></div>\r\n\r\n<div>?</div>\r\n\r\n<div>BCom - Degree in Information Science and Statistics from the University of Auckland. New Zealand</div>\r\n\r\n<div>(1994-1997)</div>\r\n\r\n<div><i>Interests</i></div>\r\n\r\n<div>Climbing, Mountaineering and Skiing. Ideally all in the same day! Gardening and 6 Music are also nice</div>\r\n\r\n<div>though. Technology wise I still enjoy coding and currently love Ruby, Angular.JS and Neo4j</div>\r\n\r\n<div>&nbsp;</div>\r\n</div>\r\n",
+    "desiredLocations" : [ "London" ],
+    "disability" : " ",
+    "educationDegree" : null,
+    "educations" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "email" : "matt@sudden.co.nz",
+    "email2" : "",
+    "email3" : "",
+    "employeeType" : "[Select]",
+    "employmentPreference" : [ "Permanent" ],
+    "ethnicity" : "",
+    "experience" : 1,
+    "externalID" : "12852",
+    "fax" : "",
+    "fax2" : "",
+    "fax3" : "",
+    "federalAddtionalWitholdingsAmount" : null,
+    "federalExemptions" : null,
+    "federalFilingStatus" : null,
+    "fileAttachments" : {
+      "total" : 5,
+      "data" : [ ]
+    },
+    "firstName" : "Matthew",
+    "gender" : "M",
+    "hourlyRate" : 0.0000,
+    "hourlyRateLow" : 0.0000,
+    "i9OnFile" : null,
+    "interviews" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "isDayLightSavings" : false,
+    "isDeleted" : false,
+    "isEditable" : true,
+    "isLockedOut" : false,
+    "lastName" : "Wright",
+    "linkedPerson" : null,
+    "localAddtionalWitholdingsAmount" : null,
+    "localExemptions" : null,
+    "localFilingStatus" : null,
+    "localTaxCode" : null,
+    "massMailOptOut" : false,
+    "masterUserID" : null,
+    "middleName" : "",
+    "migrateGUID" : null,
+    "mobile" : "07595760341 (Don't C",
+    "name" : "Matthew Wright",
+    "namePrefix" : [ "Mr" ],
+    "nameSuffix" : "",
+    "nickName" : "",
+    "notes" : {
+      "total" : 28,
+      "data" : [ ]
+    },
+    "numCategories" : 1,
+    "numOwners" : 1,
+    "occupation" : "Cto",
+    "owner" : {
+      "id" : 5,
+      "firstName" : "Adam",
+      "lastName" : "Vipond"
+    },
+    "pager" : "",
+    "paperWorkOnFile" : null,
+    "password" : "65e4324",
+    "personSubtype" : "Candidate",
+    "phone" : "44 075-95760341",
+    "phone2" : "",
+    "phone3" : "",
+    "placements" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "preferredContact" : "Phone",
+    "primarySkills" : {
+      "total" : 14,
+      "data" : [ ]
+    },
+    "recentClientList" : null,
+    "references" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "referredBy" : "",
+    "referredByPerson" : null,
+    "salary" : 0.0000,
+    "salaryLow" : 0.0000,
+    "secondaryAddress" : {
+      "address1" : "",
+      "address2" : "",
+      "city" : "",
+      "state" : "",
+      "zip" : "",
+      "countryID" : 2378
+    },
+    "secondaryOwners" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "secondarySkills" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "sendouts" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "skillSet" : null,
+    "smsOptIn" : true,
+    "source" : [ "Other" ],
+    "specialties" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "ssn" : "",
+    "stateAddtionalWitholdingsAmount" : null,
+    "stateExemptions" : null,
+    "stateFilingStatus" : null,
+    "status" : "Available",
+    "submissions" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "tasks" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "taxID" : "",
+    "taxState" : null,
+    "tearsheets" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "timeZoneOffsetEST" : 0,
+    "travelLimit" : 0,
+    "type" : "",
+    "userType" : null,
+    "username" : "WRMAfe4.14309",
+    "veteran" : " ",
+    "webResponses" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "willRelocate" : false,
+    "workAuthorized" : true,
+    "workHistories" : {
+      "total" : 12,
+      "data" : [ ]
+    },
+    "workPhone" : "44 021976"
+  }
+}

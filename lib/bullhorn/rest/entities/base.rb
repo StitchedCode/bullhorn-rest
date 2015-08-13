@@ -23,8 +23,9 @@ module Base
       json = JSON.parse(res.body)
 
       obj = Hashie::Mash.new json
+      #This is because hashie also has a count property, representing the number of fields
       obj.record_count = json["count"]
-      obj.has_next_page = obj.total? ? ((obj.start + obj.record_count) <= obj.total) : false       
+      obj.has_next_page = obj.record_count == 500      
 
       @current_record = @current_record + record_count    
       obj
@@ -36,26 +37,27 @@ module Base
     plural = entity.to_s.pluralize
     name_plural = name.pluralize   
 
+    define_method("attach_next_page") do |obj, options, path, conn|
+      obj.instance_variable_set :@options, options
+      obj.instance_variable_set :@path, path
+      obj.instance_variable_set :@current_record, 0
+      obj.instance_variable_set :@conn, conn
+      obj.instance_eval do class << self; include Decorated_Entity; end; end        
+      obj
+    end  
+
+    define_method("decorate_response") do |res|
+      obj = Hashie::Mash.new res
+      #This is because hashie also has a count property, representing the number of fields      
+      obj.record_count = res["count"]
+      obj.has_next_page = obj.record_count == 500        
+      obj  
+    end       
+
     if options[:owner_methods]   
 
-      define_method("decorate_response") do |res|
-        obj = Hashie::Mash.new res
-        obj.record_count = res["count"]
-        obj.has_next_page = obj.total? ? ((obj.start + obj.record_count) <= obj.total) : false       
-        obj  
-      end      
-
-      define_method("attach_next_page") do |obj, options, path, conn|
-        obj.instance_variable_set :@options, options
-        obj.instance_variable_set :@path, path
-        obj.instance_variable_set :@current_record, 0
-        obj.instance_variable_set :@conn, conn
-        obj.instance_eval do class << self; include Decorated_Entity; end; end       
-        obj
-      end   
-
       define_method("department_#{plural}") do |options={}|
-        params = {:fields => '*', :count => '100'}.merge(options)
+        params = {:fields => '*', :count => '500'}.merge(options)
         path = "department#{name_plural}"
 
         res = @conn.get path, params
@@ -65,7 +67,7 @@ module Base
       end                         
 
       define_method("user_#{plural}") do |options={}|
-        params = {:fields => '*', :count => '100'}.merge(options)
+        params = {:fields => '*', :count => '500'}.merge(options)
         path = "my#{name_plural}"
         res = @conn.get path, params
         obj = decorate_response JSON.parse(res.body)
@@ -109,9 +111,15 @@ module Base
 
     unless options[:immutable]
 
-      define_method("create_#{entity}") do |id, attributes={}|
-        path = "entity/#{name}/#{id}"
+      define_method("create_#{entity}") do |attributes={}|
+        path = "entity/#{name}"
         res = conn.put path, attributes
+        Hashie::Mash.new JSON.parse(res.body)
+      end
+      
+      define_method("associate_#{entity}") do |id, to_many_entity, ids|
+        path = "entity/#{name}/#{id}/#{to_many_entity}/#{ids.join(',')}"
+        res = conn.put path
         Hashie::Mash.new JSON.parse(res.body)
       end
 

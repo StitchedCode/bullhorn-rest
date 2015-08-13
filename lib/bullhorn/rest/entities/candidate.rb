@@ -6,6 +6,7 @@ module Candidate
   extend Base
 
   define_methods(:owner_methods => true)
+
 end
 
 end
