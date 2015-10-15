@@ -51,7 +51,7 @@ class Client
 
     @conn = Faraday.new do |f|
       f.use Middleware, self
-      f.response :logger 
+      f.response :logger
       f.adapter Faraday.default_adapter
     end
 
@@ -64,71 +64,81 @@ class Client
   #There is probably a case for puting all this in a helper method at some point
   def parse_to_candidate(resume_text)
       path = "resume/parseToCandidateViaJson?format=text"
-      encodedResume = {"resume" => resume_text}.to_json   
+      encodedResume = {"resume" => resume_text}.to_json
       res = conn.post path, encodedResume
       Hashie::Mash.new JSON.parse(res.body)
-  end 
+  end
 
-  def get_candidate_files(candidate_id, attributes={})
+  def candidate_files(candidate_id, attributes={})
     path = "entityFiles/Candidate/#{candidate_id}"
     res = conn.get path, attributes
     Hashie::Mash.new JSON.parse(res.body)
   end
 
-  def get_cv(candidate_id, file_id, attributes={})
+  def cv(candidate_id, file_id, attributes={})
     path = "file/Candidate/#{candidate_id}/#{file_id}"
     res = conn.get path, attributes
     obj = Hashie::Mash.new JSON.parse(res.body)
     obj.File
-  end 
+  end
 
-  def get_latest_cv(candidate_id, attributes={})
+  def all_cvs(candidate_id, attributes={})
+    cvs = []
+    files = candidate_files(candidate_id, attributes)
+    files.EntityFiles.each do |file|
+      file.except!(:description)
+      cvs.push(file.merge({cv_file: cv(candidate_id, file.id)}))
+    end
+    cvs
+  end
+
+  def latest_cv(candidate_id, attributes={})
     filter_cvs = attributes.delete(:accepted_cv_formats) { false }
-    res = get_candidate_files(candidate_id, attributes)
-    if filter_cvs    
-      cvs = res.EntityFiles.select { |file| filter_cvs.include?(file.type) }    
+    res = candidate_files(candidate_id, attributes)
+    if filter_cvs
+      cvs = res.EntityFiles.select { |file| filter_cvs.include?(file.type) }
     else
       cvs = res.EntityFiles
-    end     
-    cvs.last.nil? ? nil : cvs.last.merge({cv_file: get_cv(candidate_id, cvs.last.id)})     
-  end 
+    end
+    cvs.last.nil? ? nil : cvs.last.merge({cv_file: cv(candidate_id, cvs.last.id)})
+  end
 
   def upload_cv(candidate_id, attributes={})
     puts attributes.to_json
     path = "file/Candidate/#{candidate_id}"
     res = conn.put path, attributes.to_json
     Hashie::Mash.new JSON.parse(res.body)
-  end 
+  end
 
   def create_event(subscription_id, entity)
-     path = "event/subscription/#{subscription_id}?type=entity&names=#{entity}&eventTypes=INSERTED,UPDATED,DELETED"  
+     path = "event/subscription/#{subscription_id}?type=entity&names=#{entity}&eventTypes=INSERTED,UPDATED,DELETED"
      res = conn.put path
      Hashie::Mash.new JSON.parse(res.body)
-  end 
+  end
 
   def delete_event(subscription_id)
-     path = "event/subscription/#{subscription_id}"  
+     path = "event/subscription/#{subscription_id}"
      res = conn.delete path
      Hashie::Mash.new JSON.parse(res.body)
-  end   
+  end
 
-  def get_events(subscription_id)
-     path = "event/subscription/#{subscription_id}?maxEvents=500"  
+  def events(subscription_id)
+     path = "event/subscription/#{subscription_id}?maxEvents=500"
      res = conn.get path
      res.body.blank? ? "" : Hashie::Mash.new(JSON.parse(res.body))
-  end 
+  end
 
-  def get_events_by_requestId(subscription_id, request_id)
-     path = "event/subscription/#{subscription_id}?requestId=#{request_id}"  
+  def events_by_requestId(subscription_id, request_id)
+     path = "event/subscription/#{subscription_id}?requestId=#{request_id}"
      res = conn.get path
      res.body.blank? ? "No Results for subscription:#{subscription_id}, request:#{request_id}" : Hashie::Mash.new(JSON.parse(res.body))
-  end 
+  end
 
-  def get_meta_data(entity, attributes)
-     path = "meta/#{entity}"  
+  def meta_data(entity, attributes)
+     path = "meta/#{entity}"
      res = conn.get path, attributes
      res.body.blank? ? "" : Hashie::Mash.new(JSON.parse(res.body))
-  end 
+  end
 
 end
 end

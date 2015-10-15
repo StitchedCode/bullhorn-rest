@@ -8,10 +8,10 @@ describe Bullhorn::Rest::Client, :vcr do
 
   describe "meta_get" do
 
-    it "should return metadata for Job Order" do 
-      res = client.get_meta_data("JobOrder", {:fields => "*"})       
-      expect(res.fields.find {|n| n.name == "status" }.options.first.value).to eq("Accepting Candidates")       
-    end  
+    it "should return metadata for Job Order" do
+      res = client.meta_data("JobOrder", {:fields => "*"})
+      expect(res.fields.find {|n| n.name == "status" }.options.first.value).to eq("Accepting Candidates")
+    end
 
   end
 
