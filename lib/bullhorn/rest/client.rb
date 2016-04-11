@@ -84,11 +84,18 @@ class Client
     obj.File
   end
 
- def parse_to_candidate_as_file(format, pop, attributes)
-      path = "resume/parseToCandidate?format=#{format}&populateDescription=#{pop}" 
-      attributes['file'] = Faraday::UploadIO.new(attributes['file'], attributes['ct'])
-      res = conn.post path, attributes
-     JSON.parse(res.body)
+  def parse_to_candidate_as_file(format, pop, attributes)
+    path = "resume/parseToCandidate?format=#{format}&populateDescription=#{pop}"
+    attributes['file'] = Faraday::UploadIO.new(attributes['file'], attributes['ct'])
+    res = conn.post path, attributes
+    Hashie::Mash.new JSON.parse(res.body)
+  end
+
+  def convert_resume_to_html(file, format, content_type)
+    path = "resume/convertToHtml?format=#{format}"
+    attributes['file'] = Faraday::UploadIO.new(file, content_type)
+    res = conn.post path, attributes
+    Hashie::Mash.new JSON.parse(res.body)
   end
 
   def all_cvs(candidate_id, attributes={})
