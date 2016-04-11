@@ -1,14 +1,12 @@
 module Bullhorn
-module Rest
-module Entities
+  module Rest
+    module Entities
+      module Candidate
+        extend Base
 
-module Candidate
-  extend Base
+        define_methods(owner_methods: true, file_methods: true)
 
-  define_methods(:owner_methods => true)
-
-end
-
-end
-end
+      end
+    end
+  end
 end
