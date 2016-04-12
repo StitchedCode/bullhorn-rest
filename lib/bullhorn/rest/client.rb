@@ -44,7 +44,7 @@ class Client
   include Bullhorn::Rest::Entities::TimeUnit
 
 
-  attr_reader :conn
+  attr_reader :conn, :logger
 
   # Initializes a new Bullhorn REST Client
   def initialize(options = {})
@@ -56,7 +56,7 @@ class Client
       f.request :url_encoded
       f.adapter Faraday.default_adapter
     end
-
+    @logger = defined?(Rails) ? Rails.logger : Logger.new(STDOUT)
     [:username, :password, :client_id, :client_secret, :auth_code, :access_token, :refresh_token, :ttl, :rest_url, :rest_token, :auth_host, :rest_host].each do |opt|
       self.send "#{opt}=", options[opt] if options[opt]
     end
@@ -65,10 +65,33 @@ class Client
 
   #There is probably a case for puting all this in a helper method at some point
   def parse_to_candidate(resume_text)
-      path = "resume/parseToCandidateViaJson?format=text"
-      encodedResume = {"resume" => resume_text}.to_json
-      res = conn.post path, encodedResume
-      Hashie::Mash.new JSON.parse(res.body)
+    path = "resume/parseToCandidateViaJson?format=text"
+    encodedResume = {"resume" => resume_text}.to_json
+    res = conn.post path, encodedResume
+    Hashie::Mash.new JSON.parse(res.body)
+  end
+
+  # So here we are again retying because of some failure on the BH api side. <Sigh>. Drink another Whiskey....such is the way with CV parsing. Such is the way.
+  # http://supportforums.bullhorn.com/viewtopic.php?f=32&t=11921&st=0&sk=t&sd=a&start=15
+  def convert_resume_to_html(file_content, format, content_type)
+    path = "resume/convertToHtml?format=#{format}"
+    attributes, result = {}
+    retries = 1
+
+    Timeout.timeout(30) {
+      loop do
+        file = make_temp_file(file_content)
+        attributes['file'] = Faraday::UploadIO.new(file, content_type)
+        res = conn.post path, attributes
+        file.unlink
+        result = Hashie::Mash.new JSON.parse(res.body)
+        break if res.status == 200
+        logger.warn "Status:#{res.status}. Retrying (convert_resume_to_html) for #{attributes['file'].original_filename}.....retry number:#{retries}"
+        logger.warn "Body: #{res.body}"
+        retries+=1
+      end
+    }
+    result
   end
 
   def candidate_files(candidate_id, attributes={})
@@ -87,13 +110,6 @@ class Client
   def parse_to_candidate_as_file(format, pop, attributes)
     path = "resume/parseToCandidate?format=#{format}&populateDescription=#{pop}"
     attributes['file'] = Faraday::UploadIO.new(attributes['file'], attributes['ct'])
-    res = conn.post path, attributes
-    Hashie::Mash.new JSON.parse(res.body)
-  end
-
-  def convert_resume_to_html(file, format, content_type)
-    path = "resume/convertToHtml?format=#{format}"
-    attributes['file'] = Faraday::UploadIO.new(file, content_type)
     res = conn.post path, attributes
     Hashie::Mash.new JSON.parse(res.body)
   end
@@ -154,6 +170,14 @@ class Client
      path = "meta/#{entity}"
      res = conn.get path, attributes
      res.body.blank? ? "" : Hashie::Mash.new(JSON.parse(res.body))
+  end
+
+  private
+
+  def make_temp_file(content)
+    temp_file = Tempfile.new(SecureRandom.uuid)
+    File.open(temp_file, 'wb') { |file| file.write(content) }
+    temp_file
   end
 
 end

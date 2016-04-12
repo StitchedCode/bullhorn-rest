@@ -39,9 +39,20 @@ module Authentication
       action: 'Login',
       response_type: 'code'
     }
-    res = auth_conn.get url, params
-    location = res.headers['location']
-    self.auth_code = CGI::parse(URI(location).query)["code"].first
+
+    #Note: Sometimes we get a 500 from the server saying "Timer already cancelled".
+    #https://supportforums.bullhorn.com/viewtopic.php?t=15227
+    #https://supportforums.bullhorn.com/viewtopic.php?t=15597
+
+    #In this case we retry until it works, with a timeout
+    Timeout.timeout(30) {
+      loop do
+        res = auth_conn.get url, params
+        location = res.headers['location']
+        self.auth_code = CGI::parse(URI(location).query)["code"].first
+        break if self.auth_code
+      end
+    }
   end
 
   def retrieve_tokens
@@ -159,7 +170,7 @@ module Authentication
       end
 
       res
-      
+
     end
 
     # Add rest url and token to the url
