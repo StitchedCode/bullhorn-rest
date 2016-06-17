@@ -8,11 +8,17 @@ describe Bullhorn::Rest::Client, :vcr do
 
   let(:client) { Bullhorn::Rest::Client.new(client_id: test_bh_client_id, client_secret: test_bh_client_secret, username: test_bh_username, password: test_bh_password) }
 
-  describe "Adding new candidates " do
+    describe "Update existing candidates " do
+      it "should update primary skills " do
+        payload = {ids: [11853], primarySkills: [375606, 11481]}
+        res = client.mass_update_candidate(payload.to_json)
+        expect(res.count).to eq(1)
+      end
+    end
 
+    describe "Adding new candidates " do
 
     it "should convert to html" do
-
       #json  = File.read("spec/fixtures/example_resume_upload.json")
       #res = client.create_candidate(json)
       #base64_content = Base64.encode64(file)

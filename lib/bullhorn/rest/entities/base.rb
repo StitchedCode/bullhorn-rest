@@ -9,6 +9,7 @@ module Entities
 # http://developer.bullhorn.com/sites/default/files/BullhornRESTAPI_0.pdf
 module Base
 
+
   def entity
     @entity || self.name.demodulize.underscore
   end
@@ -120,6 +121,12 @@ module Base
       define_method("associate_#{entity}") do |id, to_many_entity, ids|
         path = "entity/#{name}/#{id}/#{to_many_entity}/#{ids.join(',')}"
         res = conn.put path
+        Hashie::Mash.new JSON.parse(res.body)
+      end
+
+      define_method("mass_update_#{entity}") do |attributes={}|
+        path = "massUpdate/#{name}"
+        res = conn.post path, attributes,  'Content-Type' => 'application/json'
         Hashie::Mash.new JSON.parse(res.body)
       end
 
